@@ -8,7 +8,8 @@
 Thymeleaf를 활용한 심플한 UI와, Spring Boot 기반의 견고한 백엔드 구조를 갖춘 풀스택 프로젝트입니다.
 
 ---
-<img width="522" alt="향수쇼핑몰 메인" src="https://github.com/user-attachments/assets/f7283ebf-922d-46a1-a4e7-15f0a1fbb0b6" />
+![플로럴 향수쇼핑몰 메인](https://github.com/user-attachments/assets/a35e1ad5-0c65-46ba-ba2d-743ceaa901c1)
+
 
 ---
 
