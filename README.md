@@ -11,7 +11,7 @@ Floral은 사용자가 향수 상품을 탐색하고, 구매자와 판매자 역
 ![플로럴 향수쇼핑몰 메인](https://github.com/user-attachments/assets/a35e1ad5-0c65-46ba-ba2d-743ceaa901c1)
 ---
 
-## 🛠️기술 스택
+## 🛠️ 기술 스택
 ## Frontend    
 Thymeleaf (HTML, CSS, JavaScript)   
 ## Backend     
@@ -34,6 +34,7 @@ Spring JDBC, MyBatis
 - 게시글 작성, 수정, 삭제
 - 댓글 작성, 수정, 삭제
 - 조회수 증가
+
   
 ## 구현 예정
 
