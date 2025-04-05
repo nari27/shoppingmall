@@ -11,11 +11,15 @@ Floral은 사용자가 향수 상품을 탐색하고, 구매자와 판매자 역
 ![플로럴 향수쇼핑몰 메인](https://github.com/user-attachments/assets/a35e1ad5-0c65-46ba-ba2d-743ceaa901c1)
 ---
 
-## 사용 기술
-| Frontend    | Thymeleaf (HTML, CSS, JavaScript)   |
-| Backend     | Spring Boot (MVC 패턴)               |
-| Database    | MySQL                               |
-| ORM/DB 연동  | Spring JDBC, MyBatis                |
+## 기술 스택
+## Frontend    
+| Thymeleaf (HTML, CSS, JavaScript)   
+## Backend     
+| Spring Boot (MVC 패턴)               
+## Database    
+| MySQL                               
+## ORM/DB 연동  
+| Spring JDBC, MyBatis                
 
 ---
 
