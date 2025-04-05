@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floral - 게시글 상세</title>
+    <!-- CSS 파일 연결 -->
+    <link rel="stylesheet" href="/css/boardDetail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+	<!-- JavaScript 파일 연결 -->
+	<script src="/js/boardDetail.js"></script>
+</head>
+
+<body>
+	<!-- 헤더 부분 -->
+		<div th:include="~{header.html}"></div>
+		
+		<!-- 게시글 상세 페이지 -->
+		    <section class="board-detail-container">
+		        <div class="post-header">
+		            <h1 class="post-title" th:text="${board.title}">게시글 제목</h1>
+		            <div class="post-meta">
+		                <span class="author">작성자: <strong th:text="${board.username}"></strong></span>
+						<span class="date">
+		                    작성일: 
+		                    <strong th:text="${#temporals.format(board.createdDate, 'yyyy-MM-dd HH:mm')}"></strong>
+		                     
+		                    <span th:if="${board.updatedDate != null}">
+		                        (수정일: <strong th:text="${#temporals.format(board.updatedDate, 'yyyy-MM-dd HH:mm')}"></strong>)
+		                    </span>
+		                </span>
+		                <span class="views">조회수: <strong th:text="${board.viewCount}"></strong></span>
+		            </div>
+		        </div>
+
+		        <div class="post-content">
+		            <p th:text="${board.content}">게시글 내용</p>
+		        </div>
+
+
+				<div id="boardActions" >
+				    <!-- 수정 버튼 -->
+				    <a th:href="@{/board/edit/{boardId}(boardId=${board.boardId})}" th:if="${#strings.equals(board.username, username)}"class="btn btn-edit">수정</a>
+
+				    <!-- 삭제 버튼 (POST 방식) -->
+				    <form th:action="@{/board/delete}" method="post" style="display:inline;">
+				        <input type="hidden" name="boardId" th:value="${board.boardId}" />
+				        <button type="submit" class="btn btn-delete" onclick="return confirm('정말 삭제하시겠습니까?');"th:if="${#strings.equals(board.username, username)}">
+				            삭제
+				        </button>
+				    </form>
+
+				    <!-- 목록 버튼 -->
+				    <a href="/board" class="btn btn-list">목록</a>
+				</div>
+
+		
+		
+				<!-- 댓글 작성 -->
+						<div class="comment-section">
+						    <h3>댓글</h3>
+
+						    <!-- 댓글 입력 폼 (POST 방식으로 전송) -->
+							<form th:action="@{/comment/create}" method="post" class="comment-form">
+							    <textarea name="content" placeholder="댓글을 작성해주세요..." required></textarea>
+							    <input type="hidden" name="targetType" value="board">
+							    <input type="hidden" name="targetId" th:value="${board.boardId}">
+							    <input type="hidden" name="userId" th:value="${userId}"> 
+							    <button type="submit" class="btn btn-submit">댓글 달기</button>
+							</form>
+							<!-- 댓글 목록 -->
+							<div id="commentList">
+							    <div th:if="${#lists.isEmpty(board.commentList)}">
+							        <p>댓글이 없습니다.</p>
+							    </div>
+									
+								<!-- 댓글 목록 -->
+								<div th:each="comment : ${board.commentList}">
+								    <div class="comment">
+								        <p th:text="${comment.content}" th:id="'content_' + ${comment.commentId}" class="comment-content"></p>
+
+								        <!-- 댓글 수정 폼 (초기에는 숨겨둡니다) -->
+								        <form th:id="'editForm_' + ${comment.commentId}" th:action="@{/comment/update}" method="post" style="display:none;">
+								            <textarea name="content" th:id="'editContent_' + ${comment.commentId}" th:value="${comment.content}"></textarea>
+								            <input type="hidden" name="commentId" th:value="${comment.commentId}" />
+											<input type="hidden" name="targetId" th:value="${comment.targetId}" />
+								            <button type="submit" class="btn btn-submit">등록</button>
+											<button type="button" th:onclick="'cancelEdit(' + ${comment.commentId} + ')'" class="btn-cancel">취소</button>
+								        </form>
+
+										<!-- 댓글 작성자 이름 출력 -->
+								        <span th:text="${comment.username}"></span>  <!-- 댓글등록 시 로그인된 유저네임 뜨게 하기 -->
+								        <span class="date">
+								            <strong th:text="${#temporals.format(comment.createdAt, 'yyyy-MM-dd HH:mm')}"></strong>
+								            <span th:if="${comment.updatedAt != null}">
+								                (수정일: <strong th:text="${#temporals.format(comment.updatedAt, 'yyyy-MM-dd HH:mm')}"></strong>)
+								            </span>
+
+											<!-- 댓글 수정 및 삭제 버튼은 작성자만 보이게 함 -->
+										<button type="button" th:if="${#strings.equals(comment.username, username)}" class="btn-delete">
+											<a th:href="@{/comment/{targetId}/delete/{commentId}(targetId=${comment.targetId}, commentId=${comment.commentId})}"
+											   onclick="return confirm('댓글을 삭제하시겠습니까?');">삭제</a>
+										</button>
+
+										<!-- 댓글 수정 버튼 -->
+										<button type="button" th:if="${#strings.equals(comment.username, username)}" th:onclick="'editComment(' + ${comment.commentId} + ')'" class="btn-edit">수정</button>
+								        </span>
+								    </div>
+								</div>
+						    </div>
+						</div>
+				    </section>
+
+    <!-- 푸터 부분 -->
+    <div th:include="~{footer.html}"></div>
+
+</body>
+</html>

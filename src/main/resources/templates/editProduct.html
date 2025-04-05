@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 수정</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>상품 수정</h1>
+        <a href="/product/list?sellerId=6">상품 목록</a>
+    </header>
+
+    <form action="/product/edit" method="post">
+        <input type="hidden" name="productId" th:value="${product.productId}">
+
+        <label for="name">상품명</label>
+        <input type="text" id="name" name="name" th:value="${product.name}" required>
+
+        <label for="description">상품 설명</label>
+        <textarea id="description" name="description" required th:value="${product.description}"></textarea>
+
+        <label for="price">가격</label>
+        <input type="number" id="price" name="price" step="0.01" th:value="${product.price}" required>
+
+        <label for="stock">재고</label>
+        <input type="number" id="stock" name="stock" th:value="${product.stock}" required>
+
+        <label for="categoryId">카테고리</label>
+        <input type="number" id="categoryId" name="categoryId" th:value="${product.categoryId}">
+
+        <button type="submit">수정</button>
+    </form>
+</body>
+</html>

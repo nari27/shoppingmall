@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floral - 향수 쇼핑몰</title>
+	<!-- CSS 파일 연결 -->
+    <link rel="stylesheet" href="/css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	
+	<!-- 헤더 부분 -->
+	<div th:include="~{header.html}"></div>
+
+
+    <!-- 메인 이미지 -->
+    <section class="main-image">
+        <img src="./images/banner.png">
+    </section>
+
+    <!-- 카테고리 메뉴 -->
+    <section class="category-menu">
+        <a href="#">플로럴</a>
+        <a href="#">시트러스</a>
+        <a href="#">우디</a>
+        <a href="#">오리엔탈</a>
+    </section>
+
+    <!-- 상품 리스트 -->
+    <section class="product-list">
+        <div class="product-item">
+            <img src="./images/item1.png" alt="향수 1">
+            <h3>플로럴 블룸</h3>
+            <p>부드럽고 고급스러운 향</p>
+        </div>
+        <div class="product-item">
+            <img src="./images/item2.png" alt="향수 2">
+            <h3>로즈 드림</h3>
+            <p>로맨틱하고 우아한 향</p>
+        </div>
+        <div class="product-item">
+            <img src="./images/item3.png" alt="향수 3">
+            <h3>베르가못 퍼퓸</h3>
+            <p>상쾌하고 청량한 향</p>
+        </div>
+    </section>
+
+	
+	<!-- 푸터 부분 -->
+	   <div th:include="~{footer.html}"></div>
+	   
+</body>
+</html>

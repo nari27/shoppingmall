@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floral - 게시글 수정</title>
+	<!-- CSS 파일 연결 -->
+	<link rel="stylesheet" href="/css/editBoard.css">
+	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+	<!-- JavaScript 파일 연결 -->
+	<script src="/js/boardDetail.js"></script>
+</head>
+
+<body>
+    <!-- 헤더 부분 -->
+    <div th:include="~{header.html}"></div>
+
+    <!-- 게시글 수정 페이지 -->
+    <section class="board-edit-container">
+        <div class="post-header">
+            <h1 class="post-title">게시글 수정</h1>
+        </div>
+
+        <!-- 게시글 수정 폼 -->
+		<form th:action="@{/board/{boardId}/edit(boardId=${board.boardId})}" method="post" class="post-edit-form">
+		    <input type="hidden" name="boardId" th:value="${board.boardId}" />
+
+		    <label for="title">제목</label>
+		    <input type="text" id="title" name="title" th:value="${board.title}" required />
+
+		    <label for="content">내용</label>
+		    <textarea id="content" name="content" rows="5" required th:text="${board.content}"></textarea>
+
+		    <div class="form-actions">   
+		        <button type="submit" class="btn btn-save">저장</button>
+		        <a th:href="@{/board/{boardId}(boardId=${board.boardId})}" class="btn btn-cancel">취소</a>
+		    </div>
+		</form>
+    </section>
+
+    <!-- 푸터 부분 -->
+    <div th:include="~{footer.html}"></div>
+
+</body>
+</html>

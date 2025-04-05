@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>상품 상세</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1 th:text="${product.name}"></h1>
+    <p th:text="${product.description}"></p>
+    <p th:text="'가격: ' + ${product.price}"></p>
+    <p th:text="'재고: ' + ${product.stock}"></p>
+
+    <h3>댓글</h3>
+    <div th:each="comment : ${comments}">
+        <p th:text="${comment.content}"></p>
+    </div>
+
+    <form action="/product/{productId}/comment" method="POST">
+        <textarea name="commentContent" placeholder="댓글을 입력하세요"></textarea><br>
+        <button type="submit">댓글 남기기</button>
+    </form>
+</body>
+</html>

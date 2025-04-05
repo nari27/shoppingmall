@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floral - 게시판</title>
+	<!-- CSS 파일 연결 -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+	<!-- JavaScript 파일 연결 -->
+	<script src="/js/board.js"></script>
+</head>
+
+<body>
+
+	<!-- 헤더 부분 -->
+	<div th:include="~{header.html}"></div>
+
+
+    <!-- 게시판 -->
+    <section class="board-container">
+        <h1>게시판</h1>
+
+        <!-- 글쓰기 버튼 -->
+        <div id="writeBtnContainer">
+            <a href="/write" class="write-btn">글쓰기</a>
+        </div>
+
+        <!-- 게시판 목록 -->
+        <table class="board-table">
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>작성일</th>
+					<th>조회수</th>
+                </tr>
+            </thead>
+			<tbody id="boardList">
+			    <tr th:each="board, iterStat : ${boardList}">
+			        <td th:text="${iterStat.index + 1}"></td>  <!-- 인덱스를 1부터 시작하도록 표시 -->
+			        <td><a th:href="@{/board/{boardId}(boardId=${board.boardId})}" th:text="${board.title}"></a></td>
+			        <td th:text="${board.username}"></td>
+			        <td th:text="${#temporals.format(board.createdDate, 'yyyy-MM-dd HH:mm')}"></td>
+			        <td th:text="${board.viewCount}"></td>
+			    </tr>
+			</tbody>
+
+        </table>
+    </section>
+	
+	
+	<!-- 푸터 부분 -->
+    <div th:include="~{footer.html}"></div>
+
+</body>
+</html>

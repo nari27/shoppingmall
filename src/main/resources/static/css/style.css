@@ -1,0 +1,370 @@
+/* 홈화면 */
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: white;
+        color: #333;
+    }
+
+    header {
+        background-color: #ffffff;
+        color: #333;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color:black;
+        font-family: cursive;
+		margin-left: 10px;
+		text-decoration: none;
+
+    }
+
+    .nav {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    /* 네비게이션 스타일 */
+    header .nav {
+        display: flex;  
+        justify-content: center;
+        gap: 80px;
+        flex-grow: 1;
+		margin-left: 80px;
+    }
+
+    .nav a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 600;
+        transition: color 0.3s ease;
+		
+    }
+
+    .nav a:hover {
+        color: rgb(254, 240, 187);
+    }
+
+    /* 로그인 버튼 */
+    .login-button {
+        display: flex;
+        gap: 10px; /* 간격을 넓힘 */
+        margin-right: 80px; /* 왼쪽으로 이동 */
+    }
+
+    .login-button a {
+        text-decoration: none;
+        color: white;
+        background-color: #555;
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+    }
+
+    .login-button a:hover {
+        background-color: #333;
+    }
+
+	
+	/* 로그아웃 버튼 */
+		    .logout-button {
+		        display: flex;
+		        gap: 10px; /* 간격을 넓힘 */
+		        margin-right: 80px; /* 왼쪽으로 이동 */
+		    }
+
+		    .logout-button a {
+		        text-decoration: none;
+		        color: white;
+		        background-color: #555;
+		        padding: 8px 15px;
+		        border-radius: 5px;
+		        font-size: 1rem;
+		        transition: background-color 0.3s ease;
+		    }
+
+		    .logout-button a:hover {
+		        background-color: #333;
+		    }
+			
+			.welcome-message {
+					    color: #333; /* 파란색 */
+						font-size: 1.2rem;
+					    font-weight: bold; /* 굵게 */
+						text-align: center;
+						margin-right: 20px; /* 왼쪽으로 이동 */
+						margin-top: 7px;
+					}
+					
+		
+			
+    /* 회원가입 버튼 */
+    .signUp-button {
+        display: flex;
+        gap: 30px; /* 간격을 넓힘 */
+        margin-right: 0px; /* 왼쪽으로 이동 */
+    }
+
+    .signUp-button a {
+        text-decoration: none;
+        color: white;
+        background-color: #555;
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+    }
+
+    .signUp-button a:hover {
+        background-color: #333;
+    }
+
+    .main-image {
+        width: 100%;
+        height: auto;
+        background: center no-repeat; /* 이미지 가운데 배치 및 반복 제거 */
+        background-size: contain;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        margin-top: 80px; /* 헤더 높이 조정 */
+    }
+
+    .main-image h1 {
+        font-size: 4rem;
+        font-weight: bold;
+        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .main-image p {
+        font-size: 1.2rem;
+        margin-top: 10px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .category-menu {
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        padding: 20px 0;
+        background-color: black;
+        color: white;
+        font-size: 1.2rem;
+        font-family: 'Arial', sans-serif; /* 원하는 글꼴로 변경 */
+    }
+
+    .category-menu a {
+        color: white;
+        text-decoration: none;
+        transition: text-decoration 0.3s ease;
+        font-family: 'Arial', sans-serif; /* 필요하면 개별적으로 글씨체 변경 */
+    }
+
+    .category-menu a:hover {
+        text-decoration: underline;
+    }
+
+    .product-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        padding: 100px 40px;
+        background-color: #fff;
+    }
+
+    .product-item {
+        text-align: center;
+        border: 1px solid #f0f0f0;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-item img {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .product-item h3 {
+        font-size: 1.4rem;
+        color: #333;
+        margin-top: 50px;
+    }
+
+    .product-item p {
+        color: #777;
+        margin-top: 10px;
+    }
+
+	footer {
+	    position: fixed;
+	    bottom: 0;
+	    left: 0;
+	    width: 100%;
+	    background-color: black;
+	    color: white;
+	    text-align: center;
+	    padding: 1px 0;
+	    font-size: 0.8rem;
+	}
+
+    footer p {
+        margin: 5px 0;
+    }
+
+    footer a {
+        color: white;
+        text-decoration: none;
+    }
+
+/* 게시판 */	 
+    /* 게시판 컨테이너 */
+    .board-container {
+        margin-top: 120px; 
+        padding: 40px;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .board-container h1 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+		text-align: center;
+    }
+	
+    /* 게시판 테이블 */
+    .board-table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: white;
+    }
+
+    .board-table th, .board-table td {
+        padding: 10px;
+        border-bottom: 2px solid #ddd;
+        text-align: center;
+		
+    }
+
+    .board-table th {
+        background-color: #f8f8f8;
+        font-weight: bold;
+		
+    }
+
+    .board-table tr:hover {
+        background-color: #f5f5f5;
+    }
+
+    .board-table a {
+        text-decoration: none;
+        color: #333;
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+   
+    /* 글쓰기 버튼 */
+    .write-btn {
+		padding: 8px 15px;
+        background-color: #555;
+        color: white;
+        font-size: 1.1rem;
+        border-radius: 5px;
+        text-decoration: none;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+    }
+
+	/* 글쓰기 버튼 컨테이너 */
+	#writeBtnContainer {
+	    text-align: right; /* 글쓰기 버튼을 오른쪽으로 정렬 */
+		margin-bottom: 10px;
+	}
+    .write-btn:hover {
+        background-color: #333;
+    }
+	
+					
+/* 글쓰기 */	
+.container {
+    max-width: 800px;
+	margin-top: 15%;
+    margin: 160px auto 50px;
+    padding: 50px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width:98%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+textarea {
+    height: 300px;
+}
+
+.button-group {
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background: #333;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #555;
+}
+
+
+
+

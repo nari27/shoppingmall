@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 목록</title>
+    <link rel="stylesheet" href="/css/styles.css"> <!-- 스타일 파일 연결 -->
+</head>
+<body>
+    <header>
+        <h1>판매자 상품 목록</h1>
+        <a href="/product/create">상품 등록</a> <!-- 상품 등록 페이지로 이동 -->
+    </header>
+
+    <table>
+        <thead>
+            <tr>
+                <th>상품명</th>
+                <th>설명</th>
+                <th>가격</th>
+                <th>재고</th>
+                <th>수정</th>
+                <th>삭제</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 상품 리스트 반복 -->
+            <th:block th:each="product : ${products}">
+                <tr>
+                    <td th:text="${product.name}"></td>
+                    <td th:text="${product.description}"></td>
+                    <td th:text="${product.price}"></td>
+                    <td th:text="${product.stock}"></td>
+                    <td><a th:href="@{/product/edit/{productId}(productId=${product.productId})}">수정</a></td>
+                    <td>
+                        <form th:action="@{/product/delete/{productId}(productId=${product.productId})}" method="post">
+                            <button type="submit">삭제</button>
+                        </form>
+                    </td>
+                </tr>
+            </th:block>
+        </tbody>
+    </table>
+</body>
+</html>
