@@ -12,13 +12,13 @@ Floral은 사용자가 향수 상품을 탐색하고, 구매자와 판매자 역
 ---
 
 ## 기술 스택
- - Frontend
+ ## Frontend
    Thymeleaf (HTML, CSS, JavaScript)  
- - Backend
+ ## Backend
    Spring Boot (MVC 패턴)               
- - Database
+ ## Database
    MySQL                               
- - ORM/DB 연동
+ ## ORM/DB 연동
    Spring JDBC, MyBatis                
 
 ---
