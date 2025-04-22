@@ -2,7 +2,7 @@
 
 > “나만의 향기를 찾을 수 있는 공간, Floral”
 
-**Floral**은 사용자가 다양한 향수 상품을 탐색하고, 구매자와 판매자 역할에 따라 기능을 수행할 수 있는 쇼핑몰입니다. 
+**Floral**은 나만의 향기를 찾고, 구매자와 판매자 역할에 따라 기능을 제공하는 향수 상품 전용 쇼핑몰 웹 애플리케이션입니다.
 
 ---
 ## 플로럴 메인 화면
@@ -11,9 +11,9 @@
 
 ## 🛠️ 기술 스택
 ## Frontend    
-Thymeleaf (HTML, CSS, JavaScript)   
+Thymeleaf, HTML, CSS, JavaScript  
 ## Backend     
-Spring Boot (MVC 패턴)               
+Spring Boot             
 ## Database    
 MySQL                               
 ## ORM/DB 연동  
@@ -24,8 +24,8 @@ Spring JDBC, MyBatis
 ## 주요 기능
 
 ### 회원 관리
-- 회원가입, 로그인, 로그아웃 (세션 기반 인증 관리)
-- 구매자 / 판매자 역할 분리
+- 세션 기반 인증 처리 (회원가입 / 로그인 / 로그아웃)
+- 사용자 역할 분리 (구매자 / 판매자)
 
 ### 자유게시판
 - 게시글 작성, 수정, 삭제
