@@ -9,7 +9,7 @@
 ![플로럴 향수쇼핑몰 메인](https://github.com/user-attachments/assets/a35e1ad5-0c65-46ba-ba2d-743ceaa901c1)
 ---
 
-## 🛠️ 기술 스택
+## 기술 스택
 ## Frontend    
 Thymeleaf, HTML, CSS, JavaScript  
 ## Backend     
