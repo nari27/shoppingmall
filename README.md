@@ -1,6 +1,6 @@
 # Floral – 향수 쇼핑몰 웹 애플리케이션
 
-> ** Spring Boot + Thymeleaf 기반
+> Spring Boot + Thymeleaf 기반
 
 Floral은 향수 상품을 주제로 한 웹 쇼핑몰이며,  
 게시판 중심 기능을 통해 서버사이드 렌더링과 MyBatis 기반 데이터 연동을 구현했습니다.
